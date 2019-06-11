@@ -70,24 +70,6 @@ public void Full_Page_Comparison_Covering_Dynamic_Element_Test()
     	Assert.IsTrue(result.Match);
 }
 ```
-
-### Compare pdf page to an Image taken previously from a pdf:
-
-``` c#
-[TestMethod]
-public void Pdf_Page_One_Comparison_Test()
-{
-	//Arrange
-  	var baseImage = "PDFPage1.png";
-    	var actualPageImage = GetPdfPageAsImage("Test.pdf", 1);
-
-	// Act
-    	var result = Differences(baseImage, actualPageImage, _options);
-
-	// Assert
-    	Assert.IsTrue(result.Match);
-}
-```
 ## Debugging when tests fail
 
 When your tets fail because results were not as expected, the framework will take screenshots of what it actually compared as well as an image displaying where the differences were found. The directory where these images are stored are configurable in the app.config. 
